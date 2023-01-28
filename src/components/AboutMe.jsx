@@ -1,6 +1,13 @@
 import React from "react";
+import aboutMeData from "../data/aboutMeData.json";
 
 export default function AboutMe(props) {
-    return <h1>Hello, {props.name} </h1>
+    
+    
+    return (
+        <div>
+            {aboutMeData.aboutMe}
+        </div>
+    );
 }
 

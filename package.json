@@ -1,6 +1,6 @@
 {
   "name": "frances-personal-website",
-  "homepage": "https://FrancesWu.github.io/franceswu.github.io",
+  "homepage": "https://FrancesWu.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,7 +16,11 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "sass": "^1.57.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "classnames": "^2.3.2",
+    "react-visibility-sensor":"^5.1.1",
+    "react-router-dom":"^6.8.0",
+    "react-anchor-link-smooth-scroll":"^1.0.12"
   },
   "scripts": {
     "start": "react-scripts start",

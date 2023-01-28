@@ -1,0 +1,14 @@
+{
+    "timelineEvents": [
+        {
+            "title": "student",
+            "time": "2014~2018",
+            "description": "being a student"
+        },
+        {
+            "title": "worker",
+            "time": "2018~2023",
+            "description": "being a worker"
+        }
+    ]
+}

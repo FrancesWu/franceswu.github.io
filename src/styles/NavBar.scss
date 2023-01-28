@@ -1,0 +1,43 @@
+@import "_variables";
+.navbar-container {
+    // sticky navbar
+    top: 0;
+    z-index: 999;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.navbar-items {
+    background-color: yellow;
+    display: flex;
+}
+
+.navbar-item {
+    float: left;
+    background-color: $offwhite;
+    color: $teal_blue;
+    flex-grow: 1;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 17px;
+    ;
+}
+
+.navbar-item:hover {
+    color: $offwhite;
+    background-color: $moonstone_blue;
+}
+
+.navbar-item-active {
+    background-color: $teal_blue;
+    color: $offwhite;
+}
+
+.navbar {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+}
