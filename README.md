@@ -1,3 +1,2 @@
-# What is this?
-
-This is my personal website.
+# Link to website
+https://franceswu.github.io/
