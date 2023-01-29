@@ -16,28 +16,32 @@
 
 .navbar-item {
     float: left;
-    background-color: $offwhite;
-    color: $teal_blue;
+    background-color: $nav_btn;
+    color: $nav_btn_text;
     flex-grow: 1;
     padding: 14px 16px;
     text-decoration: none;
     text-align: center;
     font-size: 17px;
-    ;
 }
 
 .navbar-item:hover {
-    color: $offwhite;
-    background-color: $moonstone_blue;
+    color: $nav_btn_text_hover;
+    background-color: $nav_btn_hover;
 }
 
 .navbar-item-active {
-    background-color: $teal_blue;
-    color: $offwhite;
+    background-color: $nav_btn_active;
+    color: $nav_btn_text_active;
 }
 
 .navbar {
     overflow: hidden;
     width: 100%;
     display: flex;
+}
+
+span {
+    display:flex;
+    width: 100%;
 }

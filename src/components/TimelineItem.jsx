@@ -1,80 +1,73 @@
 import React, { Component, Fragment } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import VisibilitySensor from 'react-visibility-sensor';
-import '../styles/App.scss';
+import '../styles/Timeline.scss';
 
-class TimelineItem extends Component {
-    constructor(props) {
-        super(props);
-        this.onVisibilitySensorChange = this.onVisibilitySensorChange.bind(this);
-        this.state = { visible: false };
-    }
-
-    onVisibilitySensorChange(isVisible) {
+export default function TimelineItem(props) {
+    const {
+        id,
+        children,
+        dateText,
+        // dateComponent,
+        className,
+        visibilitySensorProps,
+    } = props;
+    const [visible, setVisibility] = useState(false);
+    const onVisibilitySensorChange = (isVisible) => {
         if (isVisible) {
-            this.setState({ visible: true });
+            setVisibility(true);
         }
     }
 
-    render() {
-        const {
-            id,
-            children,
-            dateText,
-            dateStyle,
-            dateComponent,
-            dateInnerStyle,
-            bodyContainerStyle,
-            style,
-            className,
-            visibilitySensorProps,
-        } = this.props;
-        const { visible } = this.state;
-        return (
-            <div
-                id={id}
-                className={classNames(className, 'entry', {
-                    'timeline-item--no-children': children === '',
-                })}
-                style={style}
+    return (
+        <div
+            id={id}
+            className={classNames(className, 'entry', {
+                'timeline-item--no-children': children === '',
+            })}
+        >
+            <VisibilitySensor
+                {...visibilitySensorProps}
+                onChange={onVisibilitySensorChange}
             >
-                <VisibilitySensor
-                    {...visibilitySensorProps}
-                    onChange={this.onVisibilitySensorChange}
-                >
-                    <Fragment>
-                        <div className="title">
-                            <div className={`${visible ? 'bounce-in' : 'is-hidden'}`}>
-                                {dateComponent !== null ? (
-                                    dateComponent
-                                ) : (
-                                    <span style={dateStyle} className="timeline-item-date">
-                                        <time
-                                            style={dateInnerStyle}
-                                            className="timeline-item-dateinner"
-                                            title={dateText}
-                                        >
-                                            {dateText}
-                                        </time>
-                                    </span>
-                                )}
-                            </div>
+                <Fragment>
+                    <div className="title">
+                        <div className={`${visible ? 'bounce-in' : 'is-hidden'}`}>
+                            {/* {dateComponent !== null ? (
+                                dateComponent
+                            ) : (
+                                <span className="timeline-item-date">
+                                    <time
+                                        className="timeline-item-dateinner"
+                                        title={dateText}
+                                    >
+                                        {dateText}
+                                    </time>
+                                </span>
+                            )} */}
+                            <span className="timeline-item-date">
+                                <time
+                                    className="timeline-item-dateinner"
+                                    title={dateText}
+                                >
+                                    {dateText}
+                                </time>
+                            </span>
                         </div>
-                        <div className="body">
-                            <div
-                                className={`body-container ${visible ? 'bounce-in' : 'is-hidden'
-                                    }`}
-                                style={bodyContainerStyle}
-                            >
-                                {children}
-                            </div>
+                    </div>
+                    <div className="body">
+                        <div
+                            className={`body-container ${visible ? 'bounce-in' : 'is-hidden'}`}
+                        >
+                            {children}
                         </div>
-                    </Fragment>
-                </VisibilitySensor>
-            </div>
-        );
-    }
+                    </div>
+                </Fragment>
+            </VisibilitySensor>
+        </div>
+    );
 }
 
 TimelineItem.propTypes = {
@@ -84,30 +77,20 @@ TimelineItem.propTypes = {
         PropTypes.node,
     ]),
     className: PropTypes.string,
-    dateStyle: PropTypes.shape({}),
-    dateInnerStyle: PropTypes.shape({}),
-    bodyContainerStyle: PropTypes.shape({}),
-    style: PropTypes.shape({}),
     dateText: PropTypes.string,
-    dateComponent: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.func,
-        PropTypes.node,
-    ]),
+    // dateComponent: PropTypes.oneOfType([
+    //     PropTypes.string,
+    //     PropTypes.func,
+    //     PropTypes.node,
+    // ]),
     visibilitySensorProps: PropTypes.shape({}),
 };
 
 TimelineItem.defaultProps = {
     id: '',
     children: '',
-    dateComponent: null,
+    // dateComponent: null,
     className: '',
-    dateStyle: null,
-    bodyContainerStyle: null,
-    dateInnerStyle: null,
-    style: null,
     dateText: '',
     visibilitySensorProps: { partialVisibility: true, offset: { bottom: 50 } },
 };
-
-export default TimelineItem;
