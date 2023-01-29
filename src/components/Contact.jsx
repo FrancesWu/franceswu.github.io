@@ -25,6 +25,14 @@ export default function Contact() {
                         url={"https://www.facebook.com/francesxinyu.wu/"}
                         iconClass={"fa-brands fa-square-facebook fa-2xl"}
                     />
+                    <ContactIcon
+                        url={"https://space.bilibili.com/8301288"}
+                        iconClass={"fa-brands fa-bilibili fa-2xl"}
+                    />
+                    <ContactIcon
+                        url={"https://www.youtube.com/channel/UCwV7HZf3ADBMwBT66e1qVPQ"}
+                        iconClass={"fa-brands fa-youtube fa-2xl"}
+                    />
             </div>
         </div>
     )
