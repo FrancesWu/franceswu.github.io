@@ -25,9 +25,6 @@ function NavItem(props) {
         'navbar-item-active': props.activeNav == props.navId,
     });
     return (
-/*      <a className={classnames} href={pathName} data-nav-section={props.navId} onClick={()=> props.onClick(props.navId)}>
-            {props.title}
-        </a> */
         <span onClick={()=> props.onClick(props.navId)}>
             <AnchorLink href={pathName} className={classnames}>{props.title}</AnchorLink>
         </span>

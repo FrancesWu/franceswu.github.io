@@ -1,5 +1,19 @@
 @import "_variables";
 
 i {
-    color: $darker_sand;
+    color: $contact_icon;
+    padding: 20px;
+}
+
+i:hover {
+    color: $contact_icon_hover;
+}
+
+a {
+    margin: auto;
+}
+
+.contact-container {
+    width: 100%;
+    display: flex;
 }

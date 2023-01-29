@@ -4,8 +4,7 @@ import "../styles/Contact.scss";
 export default function Contact() {
     return (
         <div id="contact" className="content-container">
-            <div className="">
-                <ul>
+            <div className="contact-container">
                     <ContactIcon
                         url={"https://github.com/FrancesWu"}
                         iconClass={"fa-brands fa-github-square fa-2xl"}
@@ -18,7 +17,14 @@ export default function Contact() {
                         url={"https://www.instagram.com/franceswuxinyu/"}
                         iconClass={"fa-brands fa-instagram fa-2xl"}
                     />
-                </ul>
+                    <ContactIcon
+                        url={"mailto:franceswuxinyu@gmail.com"}
+                        iconClass={"fa-regular fa-envelope fa-2xl"}
+                    />
+                    <ContactIcon
+                        url={"https://www.facebook.com/francesxinyu.wu/"}
+                        iconClass={"fa-brands fa-square-facebook fa-2xl"}
+                    />
             </div>
         </div>
     )
@@ -26,10 +32,10 @@ export default function Contact() {
 
 function ContactIcon(props) {
     return (
-        <li className="contact-icon-container">
+        <span className="contact-icon-container">
             <a href={props.url} target="_blank" rel="noopener noreferrer">
                 <i className={props.iconClass} />
             </a>
-        </li>
+        </span>
     )
 }

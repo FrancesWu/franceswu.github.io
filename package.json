@@ -16,7 +16,6 @@
     "web-vitals": "^2.1.4",
     "classnames": "^2.3.2",
     "react-visibility-sensor": "^5.1.1",
-    "react-router-dom": "^6.8.0",
     "react-anchor-link-smooth-scroll": "^1.0.12"
   },
   "scripts": {
